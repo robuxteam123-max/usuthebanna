@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usuthebanna | Official Links</title>
+  <title>Usuthebanna | Fan Hub & Beat Catch</title>
   <style>
     * {
       box-sizing: border-box;
@@ -19,23 +19,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
+      padding: 30px 15px;
     }
 
     .container {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
       text-align: center;
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       border: 3px solid #6366f1;
       box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       object-fit: cover;
     }
 
@@ -43,19 +42,21 @@
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.5px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .bio {
       color: #a1a1aa;
       font-size: 0.95rem;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
+    /* Platform Links */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
+      margin-bottom: 30px;
     }
 
     .btn {
@@ -63,47 +64,121 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 16px 24px;
+      padding: 14px 20px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: all 0.2s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
-    .spotify {
-      background-color: #1db954;
-      color: #000000;
+    .spotify { background-color: #1db954; color: #000000; }
+    .spotify:hover { background-color: #1ed760; box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4); }
+
+    .youtube { background-color: #ff0000; color: #ffffff; }
+    .youtube:hover { background-color: #ff2626; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4); }
+
+    .icon { width: 22px; height: 22px; fill: currentColor; }
+
+    /* Section Cards */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
     }
 
-    .spotify:hover {
-      background-color: #1ed760;
-      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #818cf8;
     }
 
-    .youtube {
-      background-color: #ff0000;
-      color: #ffffff;
+    /* Game Styling */
+    #gameCanvas {
+      background: #0d0e15;
+      border-radius: 8px;
+      border: 1px solid #312e81;
+      width: 100%;
+      height: 250px;
+      display: block;
+      touch-action: none;
     }
 
-    .youtube:hover {
-      background-color: #ff2626;
-      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+    .game-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
     }
 
-    .icon {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
+    .game-btn {
+      background: #4f46e5;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
     }
+
+    .game-btn:hover { background: #6366f1; }
+
+    /* Save System Info */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .stat-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .save-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .secondary-btn {
+      background: #374151;
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .secondary-btn:hover { background: #4b5563; }
 
     footer {
-      margin-top: 40px;
+      margin-top: 20px;
       color: #52525b;
       font-size: 0.8rem;
     }
@@ -112,32 +187,229 @@
 <body>
 
   <div class="container">
-    <!-- Replace this placeholder with an official artist image URL if available -->
     <img src="https://via.placeholder.com/150" alt="Usuthebanna" class="profile-img" />
-    
     <h1>Usuthebanna</h1>
-    <p class="bio">Official Music & Videos</p>
+    <p class="bio">Official Links & Fan Hub</p>
 
+    <!-- Social Links -->
     <div class="links">
-      <!-- Spotify Direct Link -->
       <a href="https://open.spotify.com/artist/5mPRdT3x5dokGVSUxhozdz" target="_blank" rel="noopener noreferrer" class="btn spotify">
-        <svg class="icon" viewBox="0 0 24 24">
-          <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.341c-.218.358-.684.471-1.042.253-2.858-1.748-6.457-2.143-10.692-1.175-.404.092-.812-.162-.904-.566-.092-.403.161-.812.566-.903 4.636-1.06 8.604-.606 11.82 1.359.358.218.471.684.252 1.032zm1.472-3.272c-.274.446-.858.59-1.304.315-3.272-2.01-8.26-2.593-12.13-1.418-.503.153-1.031-.137-1.184-.64-.153-.502.137-1.03.64-1.183 4.417-1.34 9.914-.689 13.663 1.62.446.275.59.859.315 1.306zm.126-3.408C15.228 8.48 8.8 8.267 5.12 9.385c-.614.187-1.261-.17-1.448-.784-.187-.615.17-1.262.784-1.449 4.232-1.285 11.319-1.035 15.688 1.556.551.328.733 1.042.405 1.593-.328.552-1.042.734-1.593.406z"/>
-        </svg>
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.341c-.218.358-.684.471-1.042.253-2.858-1.748-6.457-2.143-10.692-1.175-.404.092-.812-.162-.904-.566-.092-.403.161-.812.566-.903 4.636-1.06 8.604-.606 11.82 1.359.358.218.471.684.252 1.032zm1.472-3.272c-.274.446-.858.59-1.304.315-3.272-2.01-8.26-2.593-12.13-1.418-.503.153-1.031-.137-1.184-.64-.153-.502.137-1.03.64-1.183 4.417-1.34 9.914-.689 13.663 1.62.446.275.59.859.315 1.306zm.126-3.408C15.228 8.48 8.8 8.267 5.12 9.385c-.614.187-1.261-.17-1.448-.784-.187-.615.17-1.262.784-1.449 4.232-1.285 11.319-1.035 15.688 1.556.551.328.733 1.042.405 1.593-.328.552-1.042.734-1.593.406z"/></svg>
         Listen on Spotify
       </a>
-
-      <!-- YouTube Direct Link -->
       <a href="https://youtube.com/@usuthebanna" target="_blank" rel="noopener noreferrer" class="btn youtube">
-        <svg class="icon" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
+        <svg class="icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         Watch on YouTube
       </a>
     </div>
 
-    <footer>Usuthebanna Fan Page</footer>
+    <!-- Mini-Game -->
+    <div class="card">
+      <h2>🎵 Banna Beat Catcher</h2>
+      <canvas id="gameCanvas" width="400" height="250"></canvas>
+      <div class="game-controls">
+        <span>Score: <strong id="scoreVal">0</strong></span>
+        <button id="startBtn" class="game-btn">Play Game</button>
+      </div>
+    </div>
+
+    <!-- Persistent Save Stats -->
+    <div class="card">
+      <h2>💾 Fan Save File</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-val" id="highScore">0</div>
+          <div class="stat-lbl">High Score</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="totalNotes">0</div>
+          <div class="stat-lbl">Notes Caught</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="gamesPlayed">0</div>
+          <div class="stat-lbl">Games Played</div>
+        </div>
+      </div>
+      <div class="save-actions">
+        <button class="secondary-btn" onclick="exportSave()">Export Data</button>
+        <button class="secondary-btn" onclick="importSave()">Import Data</button>
+        <button class="secondary-btn" onclick="resetSave()" style="color: #f87171;">Reset</button>
+      </div>
+    </div>
+
+    <footer>Usuthebanna Fan Web</footer>
   </div>
 
+  <script>
+    // --- Save System (localStorage) ---
+    const SAVE_KEY = 'usuthebanna_fan_save_v1';
+
+    let saveData = {
+      highScore: 0,
+      totalNotes: 0,
+      gamesPlayed: 0
+    };
+
+    function loadSave() {
+      const stored = localStorage.getItem(SAVE_KEY);
+      if (stored) {
+        try { saveData = JSON.parse(stored); } catch (e) {}
+      }
+      updateStatsUI();
+    }
+
+    function writeSave() {
+      localStorage.setItem(SAVE_KEY, JSON.stringify(saveData));
+      updateStatsUI();
+    }
+
+    function updateStatsUI() {
+      document.getElementById('highScore').innerText = saveData.highScore;
+      document.getElementById('totalNotes').innerText = saveData.totalNotes;
+      document.getElementById('gamesPlayed').innerText = saveData.gamesPlayed;
+    }
+
+    function exportSave() {
+      const dataStr = btoa(JSON.stringify(saveData));
+      prompt("Copy your save string (useful across browsers/devices):", dataStr);
+    }
+
+    function importSave() {
+      const input = prompt("Paste your save string here:");
+      if (input) {
+        try {
+          const decoded = JSON.parse(atob(input));
+          if (typeof decoded.highScore === 'number') {
+            saveData = decoded;
+            writeSave();
+            alert("Save loaded successfully!");
+          }
+        } catch (e) {
+          alert("Invalid save string!");
+        }
+      }
+    }
+
+    function resetSave() {
+      if (confirm("Reset all game stats?")) {
+        saveData = { highScore: 0, totalNotes: 0, gamesPlayed: 0 };
+        writeSave();
+      }
+    }
+
+    // --- Mini Game Logic ---
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const startBtn = document.getElementById('startBtn');
+    const scoreVal = document.getElementById('scoreVal');
+
+    let gameActive = false;
+    let score = 0;
+    let notesCaughtInSession = 0;
+    let paddle = { x: 160, width: 80, height: 12, speed: 6 };
+    let notes = [];
+    let spawnTimer = 0;
+
+    // Mouse & Touch Controls
+    function handleMove(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      paddle.x = clientX - rect.left - paddle.width / 2;
+      // Keep inside boundaries
+      if (paddle.x < 0) paddle.x = 0;
+      if (paddle.x + paddle.width > canvas.width) paddle.x = canvas.width - paddle.width;
+    }
+
+    canvas.addEventListener('mousemove', handleMove);
+    canvas.addEventListener('touchmove', handleMove);
+
+    function startGame() {
+      if (gameActive) return;
+      gameActive = true;
+      score = 0;
+      notesCaughtInSession = 0;
+      notes = [];
+      scoreVal.innerText = score;
+      startBtn.innerText = 'Playing...';
+      startBtn.disabled = true;
+
+      saveData.gamesPlayed++;
+      writeSave();
+
+      gameLoop();
+
+      // End game after 20 seconds
+      setTimeout(endGame, 20000);
+    }
+
+    function endGame() {
+      gameActive = false;
+      startBtn.innerText = 'Play Again';
+      startBtn.disabled = false;
+
+      saveData.totalNotes += notesCaughtInSession;
+      if (score > saveData.highScore) {
+        saveData.highScore = score;
+      }
+      writeSave();
+
+      alert(`Time's up! You scored ${score} points!`);
+    }
+
+    function gameLoop() {
+      if (!gameActive) return;
+
+      // Clear
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Spawn notes
+      spawnTimer++;
+      if (spawnTimer % 20 === 0) {
+        notes.push({
+          x: Math.random() * (canvas.width - 20) + 10,
+          y: 0,
+          speed: 2 + Math.random() * 2
+        });
+      }
+
+      // Draw Paddle
+      ctx.fillStyle = '#6366f1';
+      ctx.fillRect(paddle.x, canvas.height - paddle.height - 10, paddle.width, paddle.height);
+
+      // Update & Draw Notes
+      ctx.fillStyle = '#1ed760';
+      ctx.font = '16px sans-serif';
+
+      for (let i = notes.length - 1; i >= 0; i--) {
+        let n = notes[i];
+        n.y += n.speed;
+
+        ctx.fillText('🎵', n.x, n.y);
+
+        // Collision Check
+        const paddleY = canvas.height - paddle.height - 10;
+        if (
+          n.y >= paddleY - 10 &&
+          n.y <= paddleY + paddle.height &&
+          n.x >= paddle.x - 10 &&
+          n.x <= paddle.x + paddle.width + 10
+        ) {
+          score += 10;
+          notesCaughtInSession++;
+          scoreVal.innerText = score;
+          notes.splice(i, 1);
+        } else if (n.y > canvas.height) {
+          notes.splice(i, 1);
+        }
+      }
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    startBtn.addEventListener('click', startGame);
+
+    // Initial Load
+    loadSave();
+  </script>
 </body>
 </html>
